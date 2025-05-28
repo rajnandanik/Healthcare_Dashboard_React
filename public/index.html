@@ -1,43 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Healthcare Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+</head>
+<body>
+  <div class="App">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">Healthcare.</div>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#" class="nav-link dashboard active">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link history">History</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link calendar">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link appointments">Appointments</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link statistics">Statistics</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link chat">Chat</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link support">Support</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link settings">Settings</a>
+        </li>
+      </ul>
+    </nav>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <h1>Dashboard</h1>
+          <p class="date">This Week</p>
+        </div>
+        <div class="header-right">
+          <input type="text" class="search-bar" placeholder="Search">
+          <button class="notification-btn">🔔</button>
+          <div class="user-avatar">JD</div>
+        </div>
+      </header>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        <!-- Left Column -->
+        <div class="left-column">
+          <!-- Body Diagram Card -->
+          <div class="body-diagram-card">
+            <div class="body-diagram">
+              <div class="body-image">
+                <div class="body-anatomical"></div>
+              </div>
+              <div class="healthy-tag">Healthy Heart</div>
+            </div>
+            <div class="health-metrics">
+              <div class="metric-item">
+                <div class="metric-icon lungs">🫁</div>
+                <div class="metric-info">
+                  <h3>Lungs</h3>
+                  <p>Slightly damaged</p>
+                  <div class="progress-bar">
+                    <div class="progress-fill lungs"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-icon teeth">🦷</div>
+                <div class="metric-info">
+                  <h3>Teeth</h3>
+                  <p>Good condition</p>
+                  <div class="progress-bar">
+                    <div class="progress-fill teeth"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-icon bone">🦴</div>
+                <div class="metric-info">
+                  <h3>Bone</h3>
+                  <p>Very strong</p>
+                  <div class="progress-bar">
+                    <div class="progress-fill bone"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity Chart -->
+          <div class="activity-card">
+            <div class="activity-header">
+              <h2>Activity</h2>
+              <p class="activity-subtitle">2 appointments on this week</p>
+            </div>
+            <div class="chart-container">
+              <div class="chart-bar"></div>
+              <div class="chart-bar"></div>
+              <div class="chart-bar"></div>
+              <div class="chart-bar"></div>
+              <div class="chart-bar"></div>
+              <div class="chart-bar"></div>
+              <div class="chart-bar"></div>
+            </div>
+            <div class="chart-labels">
+              <span>Mon</span>
+              <span>Tue</span>
+              <span>Wed</span>
+              <span>Thu</span>
+              <span>Fri</span>
+              <span>Sat</span>
+              <span>Sun</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+          <!-- Calendar -->
+          <div class="calendar-card">
+            <div class="calendar-header">
+              <h2 class="calendar-title">October 2024</h2>
+              <div class="calendar-nav">
+                <button class="nav-btn">‹</button>
+                <button class="nav-btn">›</button>
+              </div>
+            </div>
+            <div class="calendar-grid">
+              <div class="calendar-day-header">Mon</div>
+              <div class="calendar-day-header">Tue</div>
+              <div class="calendar-day-header">Wed</div>
+              <div class="calendar-day-header">Thu</div>
+              <div class="calendar-day-header">Fri</div>
+              <div class="calendar-day-header">Sat</div>
+              <div class="calendar-day-header">Sun</div>
+              
+              <div class="calendar-day">25</div>
+              <div class="calendar-day has-appointment">26</div>
+              <div class="calendar-day today">27</div>
+              <div class="calendar-day has-appointment">28</div>
+              <div class="calendar-day">29</div>
+              <div class="calendar-day">30</div>
+              <div class="calendar-day">31</div>
+            </div>
+
+            <!-- Appointment Cards -->
+            <div class="appointment-section">
+              <div class="appointment-card">
+                <div class="appointment-icon">🦷</div>
+                <div class="appointment-info">
+                  <h3>Dentist</h3>
+                  <p>09:00-11:00 Dr. Cameron Williamson</p>
+                </div>
+              </div>
+              <div class="appointment-card">
+                <div class="appointment-icon">🏃</div>
+                <div class="appointment-info">
+                  <h3>Physiotherapy Appointment</h3>
+                  <p>11:00-12:00 Dr. Kevin Djones</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Schedule -->
+          <div class="schedule-card">
+            <h2 class="schedule-title">The Upcoming Schedule</h2>
+            
+            <div class="schedule-day">
+              <div class="schedule-day-title">On Thursday</div>
+              <div class="schedule-appointments">
+                <div class="schedule-appointment">
+                  <div class="schedule-appointment-icon checkup">🩺</div>
+                  <div class="schedule-appointment-info">
+                    <h4>Health checkup complete</h4>
+                    <p>11:00 AM</p>
+                  </div>
+                </div>
+                <div class="schedule-appointment">
+                  <div class="schedule-appointment-icon ophthalmo">👁</div>
+                  <div class="schedule-appointment-info">
+                    <h4>Ophthalmologist</h4>
+                    <p>14:00 PM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="schedule-day">
+              <div class="schedule-day-title">On Saturday</div>
+              <div class="schedule-appointments">
+                <div class="schedule-appointment">
+                  <div class="schedule-appointment-icon cardio">❤</div>
+                  <div class="schedule-appointment-info">
+                    <h4>Cardiologist</h4>
+                    <p>12:00 AM</p>
+                  </div>
+                </div>
+                <div class="schedule-appointment">
+                  <div class="schedule-appointment-icon neuro">🧠</div>
+                  <div class="schedule-appointment-info">
+                    <h4>Neurologist</h4>
+                    <p>16:00 PM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
 </html>
